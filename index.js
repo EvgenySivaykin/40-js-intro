@@ -1,5 +1,24 @@
+
+
+
+
 console.log(123);
 console.log('Labas rytas');
 console.log('Labas vakaras');
 console.log(2+2);
 console.log('2+2');
+
+/*
+Multi
+line
+comment
+*/
+
+/*
+Esmines JS temos:
+- kintamieji - informacijos isiminimas
+- salygos sakiniai - palyginimas/patikrinimas
+- ciklai - pasikartojanciu proceduru kartojimas iki kol reikia
+- funkcijos/klases - pasikartojancios logikos surinkimas i viena vieta
+- event listeners - (front'o) stebejimas kada ir koki veiksma padare partotojas
+*/
