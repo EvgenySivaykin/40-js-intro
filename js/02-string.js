@@ -4,10 +4,8 @@ reiksmes konstravimas:
 - viengubos kabutes (')
 - dvygubos kabutes (")
 - bektikas/apostrofas (`)
-
 Specialusis atvejis:
 - jei tekste yra kabutes, jas norint padaryti ne komandiniu simboliu, o tekstiniu simboliu, galima ta kabute "eskeipinti" -> \
-
 */
 
 console.log('2' + '2');
@@ -120,4 +118,3 @@ console.log(sumString);
 
 const sumString2 = `${n1} + ${n2} = ${n1 + n2}`;
 console.log(sumString2);
-

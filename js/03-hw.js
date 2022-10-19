@@ -1,5 +1,4 @@
 /*Kintamųjų inicijavimas
-
 1.	Sukurti 3 kintamuosius su skaičiaus tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
 2.	Sukurti 3 kintamuosius su teksto tipo reikšmėmis
@@ -8,10 +7,7 @@ Po kiekvieno jų inicijavimo, išvesti į console
 Po kiekvieno jų inicijavimo, išvesti į console
 4.	Sukurti 3 sąrašo tipo kintamuosius su penkiomis teksto tipo reikšmėmis
 Po kiekvieno jų inicijavimo, išvesti į console
-
-
 Veiksmai su kintamaisiais
-
 1.	Susumuoti visus skaičiaus tipo kintamuosius
 Rezultatą išvesti į console
 2.	Sujungti visus teksto tipo kintamuosius taip, jog tarp jų būtų sudarytas tarpas
@@ -20,7 +16,6 @@ Rezultatą išvesti į console
 1-2+3-4+5
 Rezultatą išvesti į console
 4.	Sujungti sąrašų vertes, kurių tipas yra tekstai, nuo sąrašo galo iki pradžios taip, jog tarp jų būtų kablelis ir tarpas
-
 */
 
 // 1.	Sukurti 3 kintamuosius su skaičiaus tipo reikšmėmis
@@ -98,5 +93,3 @@ console.log(Sveikinimas);
 
 const y = `[${tekstas1}, ${tekstas2}, ${tekstas3}]`;
 console.log(y);
-
-
