@@ -97,7 +97,16 @@ const mokykla = [
 // Jono mamos tel kiekis
 const klase = 1;
 const mokinioIndex = 1;
-const tevuIndex = 0;
+const tevuIndex = 1;
 
 const telefonai = mokykla[klase - 1][1][mokinioIndex][1][tevuIndex][1].length;
 console.log(telefonai);
+
+const MarytesMamosTelefonai = mokykla[klase - 1][1][mokinioIndex][1][tevuIndex][1].length;
+console.log(MarytesMamosTelefonai);
+
+const MarytesMamosTelefonuKiekis = `Marytes mamos telefonu kiekis: ${MarytesMamosTelefonai}.`;
+
+console.log(MarytesMamosTelefonuKiekis);
+
+

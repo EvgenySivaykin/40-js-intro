@@ -48,7 +48,7 @@ console.log(f);
 const g = [1, 5, 7, 9, 15];
 console.log(g);
 
-const k = [-3, 5.5, -7, 9.99, 131];
+const k = [-3, 5.5, -7, 9.5, 131];
 console.log(k);
 
 const m = [55, -48, 777, 3.14, 1587];
@@ -61,13 +61,28 @@ console.log(m);
 // 4.	Sukurti 3 sąrašo tipo kintamuosius su penkiomis teksto tipo reikšmėmis
 // Po kiekvieno jų inicijavimo, išvesti į console
 
-const tekstas1 = `Man patinka valgyti saldainius vakarais.`;
+const tekstas1 = [
+    'Man', 
+    'patinka', 
+    'valgyti',
+    'saldainius', 
+    'vakarais',];
 console.log(tekstas1);
 
-const tekstas2 = `As ne noriu eiti lauk.`;
+const tekstas2 = [
+    'As', 
+    'ne', 
+    'noriu', 
+    'eiti', 
+    'lauk',];
 console.log(tekstas2);
 
-const tekstas3 = `Prasau, duokite man tris patarimus!`;
+const tekstas3 = [
+    'Prasau', 
+    'duokite', 
+    'man', 
+    'tris', 
+    'patarimus',];
 console.log(tekstas3);
 
 // 1.	Susumuoti visus skaičiaus tipo kintamuosius
@@ -86,10 +101,37 @@ console.log(Sveikinimas);
 // 1-2+3-4+5
 // Rezultatą išvesti į console
 
+const a1 = g[0];
+const a2 = g[1];
+const a3 = g[2];
+const a4 = g[3];
+const a5 = g[4];
 
+const result1 = `${a1} - ${a2} + ${a3} - ${a4} + ${a5} = ${a1 - a2 + a3 - a4 + a5}`
+console.log(result1);
+
+const b1 = k[0];
+const b2 = k[1];
+const b3 = k[2];
+const b4 = k[3];
+const b5 = k[4];
+
+const result2 = `${b1} - ${b2} + ${b3} - ${b4} + ${b5} = ${b1 - b2 + b3 - b4 + b5}`
+console.log(result2);
+
+const c1 = m[0];
+const c2 = m[1];
+const c3 = m[2];
+const c4 = m[3];
+const c5 = m[4];
+
+const result3 = `${c1} - ${c2} + ${c3} - ${c4} + ${c5} = ${c1 - c2 + c3 - c4 + c5}`
+console.log(result3);
 
 
 // 4.	Sujungti sąrašų vertes, kurių tipas yra tekstai, nuo sąrašo galo iki pradžios taip, jog tarp jų būtų kablelis ir tarpas
 
 const y = `[${tekstas1}, ${tekstas2}, ${tekstas3}]`;
 console.log(y);
+
+

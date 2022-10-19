@@ -3,6 +3,12 @@ OBJECT - objektas
 key-value poros
 */
 
+const array = {
+    0: 'a',
+    1: 'b',
+}
+
+
 const person = {
     isMarried: true,
     age: 99,
@@ -75,10 +81,11 @@ const mokykla = {
 }
 console.clear();
 
-const klase = 2;
-const mokinioIndex = 1;
-const kurisTevas = 'mama';
+const klase = 1;
+const mokinioIndex = 0;
+const kurisTevas = 'tete';
 
 const klasesInfo = mokykla[klase];
 const kazkas = klasesInfo[mokinioIndex].tevai[kurisTevas][0];
 console.log(kazkas);
+
