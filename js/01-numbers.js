@@ -162,22 +162,3 @@ console.log(nf5, '->', floor5);
 const nf6 = -7.13;
 const floor6 = Math.floor(nf6)
 console.log(nf6, '->', floor6);
-
-
-
-
-
-Footer
-© 2022 GitHub, Inc.
-Footer navigation
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
