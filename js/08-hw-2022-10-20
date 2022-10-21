@@ -95,3 +95,124 @@ const finalGrade = (exam, projects) => {
   if(exam > 50 && projects > 1) return 75
   return 0;
 }
+
+// Beginner Series #4 Cockroach
+
+// My variant: 
+
+function cockroachSpeed(s) {
+  return Math.floor(s * 1000 / 36)
+  }
+
+
+// ohters:
+
+const cockroachSpeed = s => Math.floor(s / 0.036);
+
+function cockroachSpeed(s) {
+  const secsInHour = 3600;
+  const centimetersInKilometers = 100000;
+  
+  return Math.floor((s*centimetersInKilometers)/secsInHour);
+}
+
+function cockroachSpeed(s) {
+  return Math.floor(s*100000/3600);
+}
+
+function cockroachSpeed(s) {
+  //multiply km/m by 27.7777777778
+  return Math.floor(s*27.7777777778);
+}
+
+function cockroachSpeed(s) {
+  const KILOMETER_IN_CENTIMETERS = 1 * 1000 * 100;
+  const HOUR_IN_SECONDS = 1 * 60 * 60;
+  
+  return Math.floor(s * KILOMETER_IN_CENTIMETERS / HOUR_IN_SECONDS);
+}
+
+// Americans are odd people: in their buildings, the first floor is actually the ground floor and there is no 13th floor (due to superstition).
+// Write a function that given a floor in the american system returns the floor in the european system.
+// With the 1st floor being replaced by the ground floor and the 13th floor being removed, the numbers move down to take their place. In case of above 13, they move down by two because there are two omitted numbers below them.
+// Basements (negatives) stay the same as the universal level.
+
+// My variant: 
+
+function getRealFloor(n) {
+  if (n <= 0) {
+    return n;
+  }
+  if (n < 13) {
+    return n - 1;
+  } else {
+    return n - 2;
+  }
+}
+
+// ohters:
+
+function getRealFloor(n) {
+  return n > 13 ? n - 2 : n > 0 ? n - 1 : n;
+}
+
+const getRealFloor = n => {
+  if(n >= 13) return n - 2
+  if(n > 0) return n - 1
+  return n
+}
+
+function getRealFloor(n) {
+  // Less than 1, return n
+  if (n <= 0) return n;
+  
+  return n - (n >= 13 ? 2 : 1);
+}
+
+const getRealFloor = n =>
+  n > 0 ? --n - (n >= 13) : n;
+
+
+  // You are given the length and width of a 4-sided polygon. The polygon can either be a rectangle or a square.
+  // If it is a square, return its area. If it is a rectangle, return its perimeter.
+
+// My variant:
+
+const areaOrPerimeter = function(l , w) {
+  if (l == w)
+  return l * w
+  if (l != w)
+  return l * 2 + w * 2
+};
+
+
+// ohters:
+
+const areaOrPerimeter = function(l , w) {
+  return l == w ? l*w : 2*(l + w)
+};
+
+
+
+const areaOrPerimeter = (l , w) => l === w ? l*w : 2*(l+w);  
+
+const areaOrPerimeter = function(l , w) {
+  let area = l * w;
+  let perimeter = (l + w) * 2;
+    
+  return l === w ? area : perimeter;
+};
+  
+const areaOrPerimeter = (y , z) =>  y === z ? y * z : (z + y) * 2;
+
+
+const areaOrPerimeter = function(l , w) {
+  if (w == l) {
+    return w * l;
+  }
+    else {
+      return 2*l+2*w;
+    }
+};
+
+  
