@@ -416,3 +416,38 @@ function position(alphabet){
   
 }
 
+
+// Return Negative
+
+// My variant:
+
+function makeNegative(num) {
+  if (num <= 0) {
+    return num
+  } else {
+    return -1 * num
+  }
+}
+
+// ohters:
+
+function makeNegative(num) {
+  return -Math.abs(num);
+}
+
+function makeNegative(num) {
+  return num < 0 ? num : -num;
+}
+
+function makeNegative(num) {
+  return num > 0 ? -num : num;
+}
+
+makeNegative = n => -Math.abs(n)
+
+function makeNegative(num) {
+  return num <= 0 ? num : num*-1;
+}
+
+
+
