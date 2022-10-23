@@ -450,4 +450,156 @@ function makeNegative(num) {
 }
 
 
+// Grasshopper - Terminal game move function
+// Terminal game move function
+// In this game, the hero moves from left to right. The player rolls the dice and moves the number of spaces indicated by the dice two times.
 
+// Create a function for the terminal game that takes the current position of the hero and the roll (1-6) and return the new position.
+
+// My variant:
+
+function move (position, roll) {
+  return position + roll * 2
+}
+
+// ohters:
+
+const move = (position, roll) => position + roll * 2
+
+function move (position, roll) {
+  return position + roll * 2
+}
+
+const move = (p, r) => p + r * 2;
+
+const move=(_,$,_$)=>(_+[_$=-~[],++_$][-~[]]*$)
+
+function move (position, roll) {
+  return position + (2 * roll)
+}
+
+function move (position, roll) {
+  // return the new position
+  return roll >= 1 && roll <= 6 ? roll * 2 + position : null;
+}
+
+function move (position, roll) {
+  const newPosition = position + roll * 2;
+  
+  return newPosition;
+}
+
+const move = (position, roll) => position + 2*roll
+
+
+// Return the day
+
+// My variant:
+
+function whatday(num) {
+  if (num == 1) {
+    return 'Sunday';
+  } else if (num == 2) {
+      return 'Monday';
+  } else if (num == 3) {
+      return 'Tuesday';
+  } else if (num == 4) {
+      return 'Wednesday';
+  } else if (num == 5) {
+      return 'Thursday';
+  } else if (num == 6) {
+      return 'Friday';
+  } else if (num == 7) {
+      return 'Saturday';
+  } else {
+      return "Wrong, please enter a number between 1 and 7"
+  }
+}
+
+
+// ohters:
+
+function whatday(num) { 
+  switch(num) {
+    case 1:
+      return "Sunday";
+    case 2:
+      return "Monday";
+    case 3:
+      return "Tuesday";
+    case 4:
+      return "Wednesday";
+    case 5:
+      return "Thursday";
+    case 6:
+      return "Friday";
+    case 7:
+      return "Saturday";
+    default:
+      return 'Wrong, please enter a number between 1 and 7';
+  }
+}
+
+function whatday(num) { 
+  var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[num - 1] || 'Wrong, please enter a number between 1 and 7';
+}
+
+function whatday(num) { 
+  let days = {
+    1: 'Sunday',
+    2: 'Monday',
+    3: 'Tuesday',
+    4: 'Wednesday',
+    5: 'Thursday',
+    6: 'Friday',
+    7: 'Saturday'
+  }
+  return days[ num ] || 'Wrong, please enter a number between 1 and 7';
+}
+
+whatday = n => {
+  switch (n) {
+    case 1: return 'Sunday';
+    case 2: return 'Monday';
+    case 3: return 'Tuesday';
+    case 4: return 'Wednesday';
+    case 5: return 'Thursday';
+    case 6: return 'Friday';
+    case 7: return 'Saturday';
+    default: return 'Wrong, please enter a number between 1 and 7';
+  }
+}
+
+
+whatday=n=>[,'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][n]||'Wrong, please enter a number between 1 and 7'
+
+function whatday(num) { 
+  switch(num) {
+    case 1:
+      return 'Sunday';
+      break;
+    case 2:
+      return 'Monday';
+      break;
+    case 3:
+      return 'Tuesday';
+      break;
+    case 4:
+      return 'Wednesday';
+      break;
+    case 5:
+      return 'Thursday';
+      break;
+    case 6:
+      return 'Friday';
+      break;
+    case 7:
+      return 'Saturday';
+      break;
+    default:
+      return  "Wrong, please enter a number between 1 and 7"
+  }
+}
+
+const whatday = n => n > 0 && n < 8 ? new Date(1728e5 + n*864e5).toLocaleString('en', {weekday: 'long'}) : 'Wrong, please enter a number between 1 and 7'
