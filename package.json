@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "hw2": "nodemon ./js/11-hw-2022-10-24.js",
     "multiply": "nodemon ./js/10-multiply.js",
     "for": "nodemon ./js/09-for.js",
     "hw-2022-10-20": "nodemon ./js/08-hw-2022-10-20.js",
