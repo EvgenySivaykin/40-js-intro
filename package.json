@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "sum-intervale": "nodemon ./js/14-sum-intervale.js",
+    "ternary": "nodemon ./js/13-ternary.js",
+    "reverse-string": "nodemon ./js/12-reverse-string.js",
     "hw2": "nodemon ./js/11-hw-2022-10-24.js",
     "multiply": "nodemon ./js/10-multiply.js",
     "for": "nodemon ./js/09-for.js",
