@@ -578,8 +578,424 @@ function litres(time) {
   return time>>1
 }
 
+// Convert a String to a Number!
+// We need a function that can transform a string into a number. What ways of achieving this do you know?
+// Note: Don't worry, all inputs will be strings, and every string is a perfectly valid representation of an integral number.
+
+// My variant:
+
+const stringToNumber = function(str){
+  return parseInt(str);
+}
+
+// Ohters:
+
+var stringToNumber = function(str){
+  return +str;
+}
+
+const stringToNumber = str => Number(str)
 
 
+
+// Convert boolean values to strings 'Yes' or 'No'.
+// Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+
+
+// My variant:
+
+function boolToWord( bool ){
+  if (bool == true) {
+    return "Yes"
+  } if (bool == false) {
+    return "No"
+  }
+}
+
+
+// Ohters:
+function boolToWord( bool ){
+  return bool ? 'Yes':'No';
+}
+
+let boolToWord = bool => bool ? 'Yes' : 'No';
+
+
+// Opposites Attract
+// Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each. If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+// Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+
+
+// My variant:
+
+function lovefunc(flower1, flower2){
+  if (flower1 % 2 === 0 && flower2 % 2 != 0) {
+    return true
+  } else if (flower1 % 2 != 0 && flower2 % 2 === 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+
+// Ohters:
+
+function lovefunc(flower1, flower2){
+  return flower1 % 2 !== flower2 % 2;
+}
+
+function lovefunc(flower1, flower2){
+  return (flower1 + flower2) % 2 === 1
+}
+
+function lovefunc(flower1,flower2){
+  if (flower1%2==0&&flower2%2!==0) {
+    return true;
+  }else if(flower1%2!==0&&flower2%2==0){
+    return true;
+  }else return false;
+}
+
+function lovefunc(flower1, flower2){
+  return (flower1 + flower2) % 2 == 1;
+}
+
+let lovefunc = (f1, f2) => !!((f1+f2)%2)
+
+// Reversed Strings
+// Complete the solution so that it reverses the string passed into it.
+
+// My variant:
+
+function solution(str){
+  let ats = '';
+  for (let i = 0; i < str.length; i = i + 1) {
+    const index = str.length - 1 - i;
+    const symbol = str[index];
+    ats += symbol;
+  }
+  return ats;
+}
+
+// Ohters:
+
+function solution(str){
+  return str.split('').reverse().join('');  
+}
+
+const solution = str => str.split('').reverse().join('');
+
+const solution = s => [...s].reverse().join('')
+
+
+// Even or Odd
+// Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.
+
+// My variant:
+
+function even_or_odd(number) {
+  if (number % 2 === 0) {
+    return "Even"
+  } else {
+    return "Odd"
+  }
+}
+
+
+// Ohters:
+
+function even_or_odd(number) {
+  return number % 2 ? "Odd" : "Even"
+}
+
+function even_or_odd(number) {
+  return number % 2 === 0 ? 'Even' : 'Odd';
+}
+
+const even_or_odd = n => (n % 2) ? 'Odd' : 'Even';
+
+function even_or_odd(number) {
+  return number%2==0 ? 'Even' : 'Odd'
+}
+
+function even_or_odd(number) {
+  return number & 1 ? 'Odd' : 'Even';
+}
+
+
+// Convert a Number to a String!
+// We need a function that can transform a number (integer) into a string.
+// What ways of achieving this do you know?
+
+// My variant:
+
+function numberToString(num) {
+  return num.toString()
+}
+
+// Ohters:
+
+function numberToString(num) {
+  return ''+num;
+}
+
+const numberToString = num => `${num}`;
+
+numberToString = String;
+
+
+// Calculate BMI
+// Write function bmi that calculates body mass index (bmi = weight / height2).
+// if bmi <= 18.5 return "Underweight"
+// if bmi <= 25.0 return "Normal"
+// if bmi <= 30.0 return "Overweight"
+// if bmi > 30 return "Obese"
+
+
+// My variant:
+
+function bmi(weight, height) {
+  const bmi = weight / (height * height); 
+  
+  if (bmi <= 18.5) {
+    return "Underweight"
+  } else if (bmi <= 25.0) {
+    return "Normal"
+  } else if (bmi <= 30.0) {
+    return "Overweight"
+  } else if (bmi > 30) {
+    return "Obese"
+  }
+}
+
+
+// Ohters:
+
+function bmi(weight, height) {
+  var result = weight/Math.pow(height,2) 
+  
+  if (result <= 18.5) {
+    return "Underweight";
+  } else if (result <= 25) {
+    return "Normal";
+  } else if (result <= 30) {
+    return "Overweight";
+  } else {
+    return "Obese";
+  }
+  
+}
+
+function bmi(weight, height) {
+  var formula = (weight / Math.pow(height, 2));
+  switch (true) {
+    case formula <=18.5:
+    return 'Underweight';
+    case formula <=25.0:
+    return 'Normal';
+    case formula <=30:
+    return 'Overweight';
+    default:
+    return 'Obese';
+    
+  }
+}
+
+function bmi(weight, height) {
+  const $ = weight / height**2;
+  return $ <= 18.5 ? 'Underweight' : $ <= 25.0 ? 'Normal' : $ <= 30.0 ? 'Overweight' : 'Obese';
+}
+
+const bmi = (weight, height) => {
+
+  let x = (weight / (height * height))
+  
+  return x <= 18.5 ? "Underweight"
+       : x <= 25.0 ? "Normal"
+       : x <= 30.0 ? "Overweight"
+       : x > 30   && "Obese"
+}
+
+
+// You're a square!
+// A square of squares
+// You like building blocks. You especially like building blocks that are squares. And what you even like more, is to arrange them into a square of square building blocks!
+
+// However, sometimes, you can't arrange them into a square. Instead, you end up with an ordinary rectangle! Those blasted things! If you just had a way to know, whether you're currently working in vain… Wait! That's it! You just have to check if your number of building blocks is a perfect square.
+
+// Task
+// Given an integral number, determine if it's a square number:
+
+
+// My variant:
+
+var isSquare = function(n){
+  const x = Math.sqrt(n)
+  const y = x % 1
+  if (y === 0) {
+    return true
+  } if (y != 0) {
+    return false
+  }
+}
+
+
+// Ohters:
+
+function isSquare(n) {
+  return Math.sqrt(n) % 1 === 0;
+}
+
+const isSquare = n => Number.isInteger(Math.sqrt(n));
+
+var isSquare = function(n){
+  return Number.isInteger(Math.sqrt(n));
+}
+
+var isSquare = function(n){
+  for (var x = 0; x <= n; x++) {
+    if (n === 0) {
+      return true;
+    } else if (n / x === x) {
+      return true;
+    }
+  }
+  
+  return false;
+}
+
+// You Can't Code Under Pressure #1
+// Code as fast as you can! You need to double the integer and return it.
+
+// My variant:
+
+function doubleInteger(i) {
+  return i * 2;
+}
+
+
+
+
+// Convert a Boolean to a String
+// Implement a function which convert the given boolean value into its string representation.
+// Note: Only valid inputs will be given.
+
+
+// My variant:
+
+function booleanToString(b){
+  if (b == true) {
+    return "true"
+  } if (b == false) {
+    return "false"
+  }
+}
+
+// Ohters:
+
+function booleanToString(b){
+  return b.toString();
+}
+
+function booleanToString(b){
+  return String(b);
+}
+
+
+// Simple multiplication
+// This kata is about multiplying a given number by eight if it is an even number and by nine otherwise.
+
+
+// My variant:
+
+function simpleMultiplication(number) {
+  if (number % 2 === 0) {
+    return number * 8;
+  } else {
+    return number * 9;
+  }
+}
+
+
+// Ohters:
+function simpleMultiplication(n) {
+  return n * (n % 2 ? 9 : 8);
+}
+
+// Third Angle of a Triangle
+// You are given two interior angles (in degrees) of a triangle.
+// Write a function to return the 3rd.
+// Note: only positive integers will be tested.
+
+// My variant:
+
+function otherAngle(a, b) {
+  return 180 - a - b;
+}
+
+// Ohters:
+
+const otherAngle = (a, b) => 180 - a - b
+
+
+// Reverse List Order
+// In this kata you will create a function that takes in a list and returns a list with the reverse order.
+
+// My variant:
+
+function reverseList(list) {
+  return list.reverse()
+}
+
+
+// Ohters:
+
+function reverseList(list) {
+  let revList = list.reverse();
+  return revList;
+}
+
+
+const reverseList = L => L.reverse()
+
+// Returning Strings
+// Make a function that will return a greeting statement that uses an input; your program should return, "Hello, <name> how are you doing today?".
+// [Make sure you type the exact thing I wrote or the program may not execute properly]
+
+
+// My variant:
+
+function greet(name){
+  return `Hello, ${name} how are you doing today?`
+}
+
+// Ohters:
+
+function greet(name){
+  return "Hello, <name> how are you doing today?".replace("<name>", name);
+}
+
+// Beginner Series #2 Clock
+// Clock shows h hours, m minutes and s seconds after midnight.
+// Your task is to write a function which returns the time since midnight in milliseconds.
+
+
+// My variant:
+
+function past(h, m, s){
+  const result = (h * 3600000) + (m * 60000) + (s * 1000); 
+  return result
+}
+
+
+// Ohters:
+
+const past = (h,m,s) => 1000 * (3600 * h + 60 * m + s);
+
+function past(h, m, s){
+  return (((h*60) + m)*60 + s)*1000;
+}
 
 
 
