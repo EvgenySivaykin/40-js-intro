@@ -998,5 +998,307 @@ function past(h, m, s){
 }
 
 
+// Welcome!
+// Your start-up's BA has told marketing that your website has a large audience in Scandinavia and surrounding countries. Marketing thinks it would be great to welcome visitors to the site in their own language. Luckily you already use an API that detects the user's location, so this is an easy win.
+
+// The Task
+// Think of a way to store the languages as a database (eg an object). The languages are listed below so you can copy and paste!
+// Write a 'welcome' function that takes a parameter 'language' (always a string), and returns a greeting - if you have it in your database. It should default to English if the language is not in the database, or in the event of an invalid input.
+
+// My variant:
+
+function greet(language) {
+  if (language == 'czech') {
+    return 'Vitejte'
+  } else if (language == 'danish') {
+    return 'Velkomst'
+  } else if (language == 'dutch') {
+    return 'Welkom'
+  } else if (language == 'estonian') {
+    return 'Tere tulemast'
+  } else if (language == 'finnish') {
+    return 'Tervetuloa'
+  } else if (language == 'flemish') {
+    return 'Welgekomen'
+  } else if (language == 'french') {
+    return 'Bienvenue'
+  } else if (language == 'german') {
+    return 'Willkommen'
+  } else if (language == 'irish') {
+    return 'Failte'
+  } else if (language == 'italian') {
+    return 'Benvenuto'
+  } else if (language == 'latvian') {
+    return 'Gaidits'
+  } else if (language == 'lithuanian') {
+    return 'Laukiamas'
+  } else if (language == 'polish') {
+    return 'Witamy'
+  } else if (language == 'spanish') {
+    return 'Bienvenido'
+  } else if (language == 'swedish') {
+    return 'Valkommen'
+  } else if (language == 'welsh') {
+    return 'Croeso'
+  } else {
+    return 'Welcome'
+  }
+}
+
+// Ohters:
+
+function greet(lang) {
+  return langs[lang]||langs['english'];
+}
+var langs = {
+'english': 'Welcome',
+'czech': 'Vitejte',
+'danish': 'Velkomst',
+'dutch': 'Welkom',
+'estonian': 'Tere tulemast',
+'finnish': 'Tervetuloa',
+'flemish': 'Welgekomen',
+'french': 'Bienvenue',
+'german': 'Willkommen',
+'irish': 'Failte',
+'italian': 'Benvenuto',
+'latvian': 'Gaidits',
+'lithuanian': 'Laukiamas',
+'polish': 'Witamy',
+'spanish': 'Bienvenido',
+'swedish': 'Valkommen',
+'welsh': 'Croeso'
+};
+
+
+function greet(language) {
+  
+  switch(language){
+    case "english": return "Welcome";
+    case "czech": return "Vitejte";
+    case "danish": return "Velkomst";
+    case "dutch": return "Welkom";
+    case "estonian": return "Tere tulemast";
+    case "finnish": return "Tervetuloa";
+    case "flemish": return "Welgekomen";
+    case "french": return "Bienvenue";
+    case "german": return "Willkommen";
+    case "irish": return "Failte";
+    case "italian": return "Benvenuto";
+    case "latvian": return "Gaidits";
+    case "lithuanian": return "Laukiamas";
+    case "polish": return "Witamy";
+    case "spanish": return "Bienvenido";
+    case "swedish": return "Valkommen";
+    case "welsh": return "Croeso";
+    default: return "Welcome";
+    }
+  
+}
+
+// Beginner Series #1 School Paperwork
+// Your classmates asked you to copy some paperwork for them. You know that there are 'n' classmates and the paperwork has 'm' pages.
+// Your task is to calculate how many blank pages do you need. If n < 0 or m < 0 return 0.
+
+
+// My variant:
+
+function paperwork(n, m) {
+  if (n < 0 || m < 0) {
+    return 0
+  } else {
+    return n * m
+  }
+}
+
+
+// Ohters:
+
+function paperwork(n, m) {
+  return n > 0 && m > 0 ? n * m : 0
+}
+
+function paperwork(n, m) {
+  return n < 0 || m < 0 ? 0 : n * m;
+}
+
+paperwork = (n, m) => n < 0 || m < 0 ? 0 : n * m
+
+const paperwork = (n, m) => Math.max(0, n) * Math.max(0, m);
+
+// String repeat
+// Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+
+// My variant:
+
+function repeatStr (n, s) {
+  return Array(n).fill(s).join('');
+}
+
+// Ohters:
+
+function repeatStr (n, s) {
+  return s.repeat(n);
+}
+
+const repeatStr = (n,s) => s.repeat(n) ;
+
+function repeatStr (n, s) {
+  return n > 1 ? s + repeatStr(--n, s) : s;
+}
+
+// You only need one - Beginner
+// You will be given an array a and a value x. All you need to do is check whether the provided array contains the value.
+// Array can contain numbers or strings. X can be either.
+// Return true if the array contains the value, false if not.
+
+// My variant:
+
+function check(a, x) {
+  if (a.includes(x)) {
+    return true
+  } else {
+    return false
+  }
+}
+
+// Ohters:
+
+const check = (a,x) => a.includes(x);
+
+function check(a,x){
+  return a.includes(x);
+};
+
+function check(a,x){
+  return a.indexOf(x) > -1 ? true : false;
+};
+
+// Remove First and Last Character
+// It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+// My variant:
+function removeChar(str){
+  return str.slice(1, -1)
+}; 
+
+// Ohters:
+
+const removeChar = str => str.slice(1,-1)
+
+function removeChar(str){
+  return str.substring(1, str.length-1);
+};
+
+function removeChar(str){
+  //You got this!
+   str1 = str.split('');
+   str1.shift();
+   str1.pop();
+   return str1.join('');
+     
+};
+
+
+function removeChar(str){
+  return str.slice(1, str.length - 1);
+};
+
+// The Feast of Many Beasts
+// All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
+// Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
+// Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
+
+// My variant:
+
+function feast(beast, dish) {
+  let pr1 = beast.slice(0, 1);
+  let pr2 = dish.slice(0, 1);
+  let gal1 = beast.slice(-1);
+  let gal2 = dish.slice(-1);
+  
+  if (pr1 == pr2 && gal1 == gal2) {
+    return true
+  } else {
+    return false
+  }
+}
+
+// Ohters:
+
+function feast(beast, dish) {
+  return beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]
+}
+
+const feast = (...args) => /^(.).*(.),\1.*\2$/.test(args);
+
+// Are You Playing Banjo?
+// Create a function which answers the question "Are you playing banjo?".
+// If your name starts with the letter "R" or lower case "r", you are playing banjo!
+// The function takes a name as its only argument, and returns one of the following strings:
+
+
+// My variant:
+
+function areYouPlayingBanjo(name) {
+  let first = name.slice(0, 1);
+  if (first == 'R' || first == 'r') {
+    return `${name} plays banjo`
+  } else {
+    return`${name} does not play banjo` 
+  }
+}
+
+// Ohters:
+
+function areYouPlayingBanjo(name) {
+  return name + (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') + " banjo";
+}
+
+const areYouPlayingBanjo = n => n+(n.match(/^r/i) ? " plays banjo" : " does not play banjo");
+
+const areYouPlayingBanjo = name => {
+  const plays = name.toLowerCase().startsWith('r')
+    ? 'plays'
+    : 'does not play';
+  return `${name} ${plays} banjo`;
+}
+
+// Removing Elements
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+
+// My variant:
+
+function removeEveryOther(arr){
+  var firstArr = []
+  for (var i = 0; i < arr.length; i = i+2) {
+    firstArr.push(arr[i]);
+  }
+  return firstArr
+}
+
+
+// Ohters:
+
+const removeEveryOther = arr => arr.filter((_, i) => !(i % 2));
+
+function removeEveryOther(arr){
+  //your code here
+  for (var i = 1; i < arr.length;i++){
+      arr.splice(i,1);
+  }
+  return arr;
+}
+
+const removeEveryOther = arr => arr.filter((item, i) =>  i % 2 == 0);
+
+function removeEveryOther(arr){
+  return arr.filter((_,i)=>i%2==0)
+}
+
+
+
 
 
