@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "spread": "nodemon ./js/20-spread.js",
+    "arrow": "nodemon ./js/19-arrow.js",
+    "numSize": "nodemon ./js/18-numSize.js",
+    "string-methods": "nodemon ./js/17-string-methods.js",
+    "loops": "nodemon ./js/16-loops.js",
     "sum-intervale": "nodemon ./js/14-sum-intervale.js",
     "ternary": "nodemon ./js/13-ternary.js",
     "reverse-string": "nodemon ./js/12-reverse-string.js",
