@@ -552,6 +552,659 @@ class SmallestIntegerFinder {
 }
 
 
+// Sort and Star
+// You will be given a list of strings. You must sort it alphabetically (case-sensitive, and based on the ASCII values of the chars) and then return the first value.
+// The returned value must be a string, and have "***" between each of its letters.
+// You should not remove or add elements from/to the array.
+
+// My variant: 
+
+function twoSort(s) {
+  let x = s.sort();
+  const y = x[0];
+  let z = y.split('');
+  let ats = z.join('***');
+  return ats
+}
+
+// ohters:
+
+function twoSort(s) {
+  return s.sort()[0].split('').join('***');
+}
+
+
+twoSort = s => s.sort()[0].split('').join('***')
+
+function twoSort(q) {
+  let a = q.sort(); 
+  a = a[0].replace(/(.)(?=.{1,}$)/g, '$1***');
+ return a;
+}
+
+function twoSort(array) {
+  return [...array.reduce((min, str) => min < str ? min : str)].join("***");
+}
+
+Abbreviate a Two Word Name
+Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+The output should be two capital letters with a dot separating them.
+It should look like this:
+Sam Harris => S.H
+patrick feeney => P.F
+
+
+// My variant: 
+
+function abbrevName(name){
+
+  let x = name.split(' ');
+  let u = x[0];
+  let r = x[1];
+  let n = u[0];
+  let f = r[0];
+  let nn = n.toUpperCase();
+  let ff = f.toUpperCase();
+  const ats = `${nn}.${ff}`;
+  return ats
+}
+
+
+// ohters:
+
+function abbrevName(name){
+
+  return name.split(' ').map(i => i[0].toUpperCase()).join('.')
+
+}
+
+function abbrevName(name){
+  return name.split(' ').map(x => x.substr(0, 1).toUpperCase()).join('.');
+}
+
+// Twice as old
+
+// Your function takes two arguments:
+// current father's age (years)
+// current age of his son (years)
+// Сalculate how many years ago the father was twice as old as his son (or in how many years he will be twice as old). The answer is always greater or equal to 0, no matter if it was in the past or it is in the future.
+
+
+// My variant: 
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  const n = Math.abs(dadYearsOld - 2 * sonYearsOld); 
+  return n
+}
+
+
+// ohters:
+
+function twiceAsOld(a, b) {
+  return a>2*b ? a-2*b : 2*b-a;
+}
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+  // dadYearsOld must be sonYearsOld * 2
+  // dadYearsOld when son is 0 is dadYearsOld - sonYearsOld
+  let difference = dadYearsOld - sonYearsOld;
+  return Math.abs(dadYearsOld - difference*2);
+}
+
+Calculate average
+Write a function which calculates the average of the numbers in a given list.
+
+
+// My variant: 
+
+function findAverage(array) {
+  const count = array.length;
+  
+  if (count == 0) {
+    return 0
+  } else {
+    let total = 0;
+  for (let i = 0; i < array.length; i = i + 1) {
+    total = total + array[i];
+  }
+    const count = array.length;
+    const avg = total / count;
+    return avg
+  }
+}
+
+
+// ohters:
+
+var find_average = (array) => {  
+  return array.length === 0 ? 0 : array.reduce((acc, ind)=> acc + ind, 0)/array.length
+}
+
+const find_average = array => array.reduce((acc, curr) => acc + curr, 0) / array.length || 0;
+
+
+// Is this a triangle?
+// Implement a function that accepts 3 integer values a, b, c. The function should return true if a triangle can be built with the sides of given length and false in any other case.
+// (In this case, all triangles must have surface greater than 0 to be accepted).
+
+
+// My variant: 
+
+function isTriangle(a,b,c)
+{
+  if ((a + b) > c && c >= a && c >= b) {
+    return true
+  } else if ((a + c) > b && b >= a && b >= c) {
+    return true
+  } else if ((b + c) > a && a >= b && a >= c) {
+    return true
+  } else {
+    return false
+  }
+}
+
+// ohters:
+
+function isTriangle(a,b,c)
+{
+   return a + b > c && a + c > b && c + b > a;
+}
+
+var isTriangle = (a,b,c) => Math.max(a,b,c)<(a+b+c)/2
+
+function isTriangle(a,b,c) {
+  var sides = [a, b, c].sort();
+  return (sides[0] + sides[1] > sides[2]);
+}
+
+const isTriangle = (a$,b$,c$) => a$ + b$ > c$ && a$ + c$ > b$ && b$ + c$ > a$;
+
+// Name Shuffler
+// Write a function that returns a string in which firstname is swapped with last name.
+
+// My variant: 
+
+function nameShuffler(str){
+  let x = str.split(' ');
+  let y = x[0];
+  let z = x[1];
+  const ats = `${z} ${y}`;
+  return ats
+}
+
+// ohters:
+
+function nameSuffle(str){
+  return str.split(' ').reverse().join(' ')
+}
+
+const nameShuffler = str => str.split(' ').reverse().join(' ');
+
+// Remove String Spaces
+// Simple, remove the spaces from the string, then return the resultant string.
+
+
+// My variant: 
+
+function noSpace(x){
+  let y = x.split(' ');
+  let ats = y.join('');
+  return ats
+}
+
+// ohters:
+
+function noSpace(x){
+  return x.replace(/\s/g, '');
+}
+
+function noSpace(x){return x.split(' ').join('')}
+
+const noSpace = x => x.replace(/ /g, "");
+
+const noSpace=x=>x.split(" ").join("");
+
+
+
+// Cat years, Dog years
+// Kata Task
+// I have a cat and a dog.
+// I got them at the same time as kitten/puppy. That was humanYears years ago.
+// Return their respective ages now as [humanYears,catYears,dogYears]
+
+// NOTES:
+// humanYears >= 1
+// humanYears are whole numbers only
+// Cat Years
+// 15 cat years for first year
+// +9 cat years for second year
+// +4 cat years for each year after that
+// Dog Years
+// 15 dog years for first year
+// +9 dog years for second year
+// +5 dog years for each year after that
+
+
+// My variant: 
+
+var humanYearsCatYearsDogYears = function(humanYears) {
+  // Your code here!
+  let a = humanYears;
+  if (a == 1) {
+    return [1,15,15]
+  } else if (a == 2) {
+    return [2,24,24]
+  } else if (a > 2) {
+    const b = 15 + 9 + (a - 2) * 4;
+    const c = 15 + 9 + (a - 2) * 5;
+    return [a,b,c]
+  }
+}
+
+// ohters:
+
+var humanYearsCatYearsDogYears = function(y) {
+  if (y == 1) return [1, 15, 15]
+  if (y == 2) return [2, 24, 24]
+  return [y, (y-2) * 4 + 24, (y-2) * 5 + 24]
+}
+
+const humanYearsCatYearsDogYears = humanYears => [
+  humanYears,
+  ( humanYears - 1 ? 16 : 11 ) + 4 * humanYears,
+  ( humanYears - 1 ? 14 : 10 ) + 5 * humanYears,
+];
+
+var humanYearsCatYearsDogYears = x => x == 1 ? [1, 15, 15] : x == 2 ? [2, 24, 24] : [x , 24 + ( 4 * (x-2)), 24 + (5 * (x-2))];
+
+
+// Is it even?
+
+// In this Kata we are passing a number (n) into a function.
+// Your code will determine if the number passed is even (or not).
+// The function needs to return either a true or false.
+// Numbers may be positive or negative, integers or floats.
+// Floats with decimal part non equal to zero are considered UNeven for this kata.
+
+
+// My variant: 
+
+function testEven(n) {
+  const x = n % 2;
+  if (x === 0) {
+    return true
+  } else {
+    return false
+  }
+}
+
+// ohters:
+
+function testEven(n) {
+  return n%2===0;
+}
+
+function testEven(n) {
+  return n % 2 === 0 ? true : false;
+}
+
+function testEven(n){
+  return !(n % 2);
+}
+
+const testEven = n => !(n % 2);
+
+// Convert a string to an array
+// Write a function to split a string and convert it into an array of words.
+
+// My variant: 
+
+function stringToArray(string){
+
+	let nstring = string.split(' ');
+  return nstring
+}
+
+// ohters:
+
+function stringToArray(string){
+  return string.split(' ');
+}
+
+const stringToArray = string => string.split(' ');
+
+stringToArray=(s)=>s.split(' ')
+
+
+
+// A wolf in sheep's clothing
+
+// Wolves have been reintroduced to Great Britain. You are a sheep farmer, and are now plagued by wolves which pretend to be sheep. Fortunately, you are good at spotting them.
+// Warn the sheep in front of the wolf that it is about to be eaten. Remember that you are standing at the front of the queue which is at the end of the array:
+
+// If the wolf is the closest animal to you, return "Pls go away and stop eating my sheep". Otherwise, return "Oi! Sheep number N! You are about to be eaten by a wolf!" where N is the sheep's position in the queue.
+// Note: there will always be exactly one wolf in the array.
+
+
+// My variant: 
+
+function warnTheSheep(queue) {
+  const rev = queue.reverse()
+  if (rev[0] == 'wolf') {
+    return "Pls go away and stop eating my sheep"
+  } else {
+    let w = rev.indexOf('wolf');
+    return `Oi! Sheep number ${w}! You are about to be eaten by a wolf!`
+  }
+}
+
+// ohters:
+
+function warnTheSheep(queue) {
+  const position = queue.reverse().indexOf('wolf');
+  return position === 0 ? 'Pls go away and stop eating my sheep' : `Oi! Sheep number ${ position }! You are about to be eaten by a wolf!`;
+}
+
+function warnTheSheep(q) {
+  return q[q.length-1] === 'wolf' ? "Pls go away and stop eating my sheep" : `Oi! Sheep number ${q.length - (q.indexOf('wolf')+1)}! You are about to be eaten by a wolf!`
+}
+
+function warnTheSheep(queue) {
+  let sheepIndex = queue.length - queue.indexOf('wolf') - 1;
+  if (sheepIndex === 0)
+      return 'Pls go away and stop eating my sheep';
+  return `Oi! Sheep number ${sheepIndex}! You are about to be eaten by a wolf!`;
+}
+
+const warnTheSheep = queue =>
+  (val => val ? `Oi! Sheep number ${val}! You are about to be eaten by a wolf!` : `Pls go away and stop eating my sheep`)
+  (queue.reverse().indexOf('wolf'));
+
+// Sum Arrays
+// Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.
+
+
+// My variant: 
+// Sum Numbers
+function sum (numbers) {
+  let total = 0;
+  for (let i = 0; i < numbers.length; i = i + 1) {
+    total = total + numbers[i];
+  }
+    return total  
+};
+
+
+// ohters:
+
+function sum(numbers) {
+  return numbers.reduce((a, b) => a + b, 0);
+}
+
+// Sum Numbers
+sum = function (numbers) {
+  "use strict";
+  return numbers.reduce(function(t, n){
+    return t + n;
+  }, 0);
+};
+
+const sum = n => n.reduce((a,b) => a+b, 0);
+
+const sum = num => num.reduce((acc, curr)=> acc+curr, 0);
+
+const sum = numbers => numbers.reduce((sum, number) => sum += number, 0);
+
+
+// How good are you really?
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+// Return True if you're better, else False!
+// Note:
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+
+// My variant: 
+
+function betterThanAverage(classPoints, yourPoints) {
+  let total = 0;
+  for  (let i = 0; i < classPoints.length; i = i + 1) {
+    total = total + classPoints[i]; 
+  }
+  const count = classPoints.length;
+  const average = total / count;
+  
+  if (yourPoints >= average) {
+    return true
+  } else {
+    return false
+  }
+}
+
+
+// ohters:
+
+function betterThanAverage(classPoints, yourPoints) {
+  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
+}
+
+function betterThanAverage(classPoints, yourPoints) {
+  const classPointsSum = classPoints.reduce((a, b) => a + b, 0);
+  const classAverage = classPointsSum / classPoints.length;
+  const isBetter = yourPoints > classAverage;
+  return isBetter;
+}
+
+const betterThanAverage = (classPoints, yourPoints) =>
+  yourPoints > classPoints.reduce((pre, val) => pre + val, yourPoints) / (classPoints.length + 1);
+
+// 5 without numbers !!
+// Write a function that always returns 5
+// Sounds easy right? Just bear in mind that you can't use any of the following characters: 0123456789*+-/
+// Good luck :)
+
+// My variant: 
+
+function unusualFive() {
+  const at = 'abcde';
+  const ats = at.length;
+  
+  return ats
+}
+
+
+// ohters:
+
+function unusualFive() {
+  return 'fucku'.length
+}
+
+const unusualFive = () =>
+  Math.hypot(Math.ceil(Math.PI), Math.floor(Math.PI));
+
+unusualFive=_=>'     '.length
+
+
+
+// Grasshopper - Terminal game combat function
+// Create a combat function that takes the player's current health and the amount of damage recieved, and returns the player's new health. Health can't be less than 0.
+
+// My variant: 
+function combat(health, damage) {
+  const ats = health - damage;
+  if (health > damage) {
+    return ats
+  } else {
+    return 0
+  }
+}
+
+
+// ohters:
+
+function combat(health, damage) {
+  return health < damage ? 0 : health - damage
+}
+
+const combat = (health, damage) => Math.max(0, health - damage);
+
+function combat(health, damage) {
+  if (isNaN(health) || isNaN(damage)) return;
+  return health > damage ? health - damage : 0;
+}
+
+
+// Make a function that does arithmetic!
+
+// Given two numbers and an arithmetic operator (the name of it, as a string), return the result of the two numbers having that operator used on them.
+// a and b will both be positive integers, and a will always be the first number in the operation, and b always the second.
+// The four operators are "add", "subtract", "divide", "multiply".
+
+
+// My variant: 
+
+function arithmetic(a, b, operator){
+  if (operator == "add") {
+    return a + b
+  } else if (operator == "subtract") {
+    return a - b
+  } else if (operator == "multiply") {
+    return a * b
+  } else if (operator == "divide") {
+    return a / b
+  }
+}
+
+
+// ohters:
+
+function arithmetic(a, b, operator){
+  switch(operator) {
+    case 'add':
+      return a + b;
+    case 'subtract':
+      return a - b;
+    case 'multiply':
+      return a * b;
+    case 'divide':
+      return a / b;
+  }
+}
+
+function arithmetic(a, b, operator){
+  optable = { "add":"+", "subtract": "-", "multiply": "*" , "divide":"/"};
+  return eval(a + optable[operator] + b); 
+}
+
+const arithmetic = (a, b, operator) => {
+  return  ( 
+    operator === "add" ? a + b : operator === "subtract" ? a - b : operator === "multiply" ? a * b : a / b
+  )
+}
+
+function arithmetic(a, b, op){
+  return ({
+    'm': (a, b) => a*b,
+    'd': (a, b) => a/b,
+    'a': (a, b) => a+b,
+    's': (a, b) => a-b
+  })[op[0]](a, b);
+}
+
+function arithmetic(a, b, operator){
+  return ops[operator](a, b);
+}
+
+const ops = {
+  "add"      : (a, b) => a + b,
+  "subtract" : (a, b) => a - b,
+  "multiply" : (a, b) => a * b,
+  "divide"   : (a, b) => a / b
+}
+
+// Exclamation marks series #1: Remove an exclamation mark from the end of string
+
+// Remove an exclamation mark from the end of a string. For a beginner kata, you can assume that the input data is always a string, no need to verify it.
+
+
+// My variant: 
+
+function remove (string) {
+  let kord = string.length - 1;
+  let x = string[kord]
+  if (x != '!') {
+    return string
+  } else {
+    return string.slice(0, kord)
+  }
+}
+
+// ohters:
+const remove = s => s.replace(/!$/, '');
+
+function remove(s) {
+  return s.endsWith('!') ? s.slice(0, -1) : s;
+}
+
+function remove(s){
+  return s.replace( /!$/, '') 
+}
+
+const remove = s =>
+  s.replace(/!$/, ``);
+
+//RegExp is power
+var remove = s => s.replace(/!$/, '')
+
+// Reversing Words in a String
+// You need to write a function that reverses the words in a given string. A word can also fit an empty string. If this is not clear enough, here are some examples:
+// As the input may have trailing spaces, you will also need to ignore unneccesary whitespace.
+
+
+// My variant: 
+
+function reverse(string){
+  let x = string.split(' ');
+  let y = x.reverse();
+  let z = y.join(' ');
+  return z
+}
+
+// ohters:
+
+function reverse(string){
+  return string.split(' ').reverse().join(' ');
+}
+
+reverse = s => s.split(' ').reverse().join(' ')
+
+const reverse = str => str.split(' ').reverse().join(' ');
+
+Is it a palindrome?
+Write a function that checks if a given string (case insensitive) is a palindrome.
+
+// My variant: 
+
+function isPalindrome(x) {
+  const e = x.toUpperCase()
+  let y = e.split('');
+  let z = y.reverse();
+  let j = z.join('');
+  if (e == j) {
+    return true
+  } else {
+    return false
+  }
+}
+
+
+// ohters:
+
+const isPalindrome = (x) => {
+  return x.split("").reverse().join("").toLowerCase() === x.toLowerCase() ? true : false
+}
+
+const isPalindrome = x => x.toLowerCase().split('').reverse().join('') == x.toLowerCase();
 
 
 

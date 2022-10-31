@@ -56,7 +56,7 @@ console.clear();
 const luckyNumbers = [3, 7, 13, 11, 31, 21, 666];
 const alternativeLuckies = [];
 for (const n of luckyNumbers) {
-    alternativeLuckies.push(0xbabecaffe);
+    alternativeLuckies.push(777777);
 }
 console.log(alternativeLuckies);
 
@@ -166,7 +166,7 @@ console.log(keyboardNumber);
 keyboardNumber.sort();
 console.log(keyboardNumber);
 
-console.clear();
+// console.clear();
 
 // REDUCE - masyvo visas reiksmes suvesti i viena galutine reiksme
 

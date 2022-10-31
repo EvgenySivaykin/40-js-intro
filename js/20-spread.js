@@ -43,7 +43,7 @@ console.log(newMarks);
 
 const spreadMarks = [...marks];
 
-console.clear();
+// console.clear();
 
 const abc = ['a', 'b', 'c'];
 const abcd = [...abc, 'd'];

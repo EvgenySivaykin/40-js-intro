@@ -29,7 +29,7 @@ console.log(ats2);
 
 
 let taiKaipIf = '';
-if (4 > 22 && 5 >> 77) {
+if (4 > 22 && 5 > 77) {
     taiKaipIf = 'daugiau';
 } else {
     taiKaipIf = 'maziau';
