@@ -471,18 +471,4 @@ function hexToDec(hexString){
   return isNeg ? output * -1 : output;
 }
 
-// Price of Mangoes
-// There's a "3 for 2" (or "2+1" if you like) offer on mangoes. For a given quantity and price (per mango), calculate the total cost of the mangoes.
-
-
-// My variant:
-function mango(quantity, price){
-  const q = (quantity / 3) * 2;
-  const ats = price * q;
-  
-  return ats
-}
-
-// ohters:
-
 
