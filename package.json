@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "hw4": "nodemon ./js/22-hw-2022-11-01.js",
     "hw3": "nodemon ./js/21-hw-2022-10-29.js",
     "spread": "nodemon ./js/20-spread.js",
     "arrow": "nodemon ./js/19-arrow.js",
