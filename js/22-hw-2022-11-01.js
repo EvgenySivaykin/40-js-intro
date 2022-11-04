@@ -761,3 +761,301 @@ function elevator(a, b, c) {
 }
 
 
+// Fuel Calculator
+// In this kata you will have to write a function that takes litres and pricePerLitre(in dollar) as arguments.
+// Purchases of 2 or more litres get a discount of 5 cents per litre, purchases of 4 or more litres get a discount of 10 cents per litre, and so on every two litres, up to a maximum discount of 25 cents per litre.But total discount per litre cannot be more than 25 cents.Return the total cost rounded to 2 decimal places.Also you can guess that there will not be negative or non - numeric inputs.
+// Good Luck!
+// Note
+// 1 Dollar = 100 Cents
+
+
+
+// My variant:
+
+function fuelPrice(litres, pricePerLitre) {
+  if (litres < 2) {
+    let t = litres * pricePerLitre;
+    const j = t.toFixed(2)
+    return parseFloat(j)
+
+  } else if (litres < 4) {
+    let x = litres * (pricePerLitre - 0.05);
+    const z = x.toFixed(2)
+    return parseFloat(z)
+
+  } else if (litres < 6) {
+    const y = litres * (pricePerLitre - 0.10);
+    const g = y.toFixed(2)
+    return parseFloat(g)
+
+  } else if (litres < 8) {
+    let o = litres * (pricePerLitre - 0.15);
+    const w = o.toFixed(2)
+    return parseFloat(w)
+
+  } else if (litres < 10) {
+    let u = litres * (pricePerLitre - 0.20);
+    const d = u.toFixed(2)
+    return parseFloat(d)
+
+  } else {
+    let h = litres * (pricePerLitre - 0.25);
+    const l = h.toFixed(2)
+    return parseFloat(l)
+  }
+}
+
+
+// ohters:
+
+function fuelPrice(litres, pricePerLiter) {
+  for (var i = 2; i <= 10; i += 2) { //discount loop
+    if (litres >= i) {
+      pricePerLiter -= 0.05;
+    }
+  }
+  return Math.round(litres * pricePerLiter * 100) / 100;;
+}
+
+function fuelPrice(litres, pricePerLiter) {
+  var discount = Math.min(Math.floor(litres / 2) * 0.05, 0.25);
+  var price = litres * (pricePerLiter - discount);
+  return Math.round(price * 100) / 100;
+}
+
+function fuelPrice(l, p) {
+  return Math.round(100 * l * Math.max(p - 0.05 * ~~(l / 2), p - 0.25)) / 100;
+}
+
+
+// Get the Middle Character
+// You are going to be given a word.Your job is to return the middle character of the word.If the word's length is odd, return the middle character. If the word's length is even, return the middle 2 characters.
+
+// My variant:
+
+function getMiddle(s) {
+  let p = s.length / 2;
+  let z = p % 1;
+
+  if (z === 0) {
+    let f = p - 1;
+    let a = `${s[f]}${s[p]}`;
+
+    return a
+  } else {
+    let t = Math.floor(p);
+    return `${s[t]}`
+  }
+}
+
+// ohters:
+
+function getMiddle(s) {
+  return s.substr(Math.ceil(s.length / 2 - 1), s.length % 2 === 0 ? 2 : 1);
+}
+
+function getMiddle(s) {
+  var middle = s.length / 2;
+  return (s.length % 2)
+    ? s.charAt(Math.floor(middle))
+    : s.slice(middle - 1, middle + 1);
+}
+
+function getMiddle(s) {
+  return s.slice((s.length - 1) / 2, s.length / 2 + 1);
+}
+
+
+// Binary Addition
+// Implement a function that adds two numbers together and returns their sum in binary.The conversion can be done before, or after the addition.
+// The binary number returned should be a string.
+
+// My variant:
+
+function addBinary(a, b) {
+  let s = a + b;
+  let d = Number(s).toString(2);
+
+  return d
+}
+
+// ohters:
+
+function addBinary(a, b) {
+  return (a + b).toString(2)
+}
+
+function decimalToBinary(decimal) {
+  return (decimal >>> 0).toString(2);
+}
+function addBinary(a, b) {
+  return decimalToBinary(a + b);
+}
+
+function addBinary(a, b) {
+  var c = a + b;
+  var res = '';
+  while (c >= 1) {
+    var res = c % 2 + res;
+    c = Math.floor(c / 2);
+  }
+  return res;
+}
+
+const addBinary = (a, b) => Math.trunc(a + b).toString(2)
+
+
+// Localize The Barycenter of a Triangle
+// The medians of a triangle are the segments that unit the vertices with the midpoint of their opposite sides.The three medians of a triangle intersect at the same point, called the barycenter or the centroid.Given a triangle, defined by the cartesian coordinates of its vertices we need to localize its barycenter or centroid.
+// The function bar_triang() or barTriang or bar - triang, receives the coordinates of the three vertices A, B and C as three different arguments and outputs the coordinates of the barycenter O in an array[xO, yO]
+// This is how our asked function should work: the result of the coordinates should be expressed up to four decimals, (rounded result).
+// You know that the coordinates of the barycenter are given by the following formulas.
+
+// My variant:
+
+function barTriang(p1, p2, p3) {
+  let x = (p1[0] + p2[0] + p3[0]) / 3;
+  let y = (p1[1] + p2[1] + p3[1]) / 3;
+  let a = x.toFixed(4);
+  let b = y.toFixed(4);
+
+  return [parseFloat(a), parseFloat(b)]
+}
+
+// ohters:
+
+function barTriang(p1, p2, p3) {
+  return [+((p1[0] + p2[0] + p3[0]) / 3).toFixed(4),
+  +((p1[1] + p2[1] + p3[1]) / 3).toFixed(4)];
+}
+
+const barTriang = ([xA, yA], [xB, yB], [xC, yC]) => [Math.round((xA + xB + xC) / .0003) / 10000, Math.round((yA + yB + yC) / .0003) / 10000];
+
+const roundToFour = n => +`${Math.round(`${n}e+4`)}e-4`;
+const barTriang = ([xA, yA], [xB, yB], [xC, yC]) => [
+  roundToFour((xA + xB + xC) / 3),
+  roundToFour((yA + yB + yC) / 3)
+];
+
+
+// Coefficients of the Quadratic Equation
+// In this Kata you are expected to find the coefficients of quadratic equation of the given two roots(x1 and x2).
+// Equation will be the form of ax ^ 2 + bx + c = 0
+// Return type is a Vector(tuple in Rust, Array in Ruby) containing coefficients of the equations in the order(a, b, c).
+// Since there are infinitely many solutions to this problem, we fix a = 1.
+// Remember, the roots can be written like(x - x1) * (x - x2) = 0
+
+
+// My variant:
+
+function quadratic(x1, x2) {
+  const b = - x1 - x2;
+  const d = (x2 - x1) * (x2 - x1);
+  const s = b * b;
+  const c = (s - d) / 4;
+
+  return [1, b, c]
+}
+
+// ohters:
+
+function quadratic(x1, x2) {
+  return [1, -(x2 + x1), (x1 * x2)]
+}
+
+// quadratic equation
+var quadratic = (x1, x2) => [1, (x1 + x2) * -1, x1 * x2]
+
+function quadratic(x1, x2) {
+  return [1, -x1 - x2, x1 * x2];
+}
+
+const quadratic = (a, b) => [1, -a - b, a * b];
+
+// String ends with?
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument(also a string).
+
+// My variant:
+
+function solution(str, ending) {
+  if (str.endsWith(ending)) {
+    return true
+  } else {
+    return false
+  }
+}
+
+// ohters:
+
+function solution(str, ending) {
+  return str.endsWith(ending);
+}
+
+const solution = (str, ending) => str.endsWith(ending);
+
+function solution(str, ending) {
+  if (typeof (str) != "string" || typeof (ending) != "string")
+    throw "wrong type";
+  if (ending.length > str.length)
+    return false;
+  return str.substr(str.length - ending.length, ending.length) == ending;
+}
+
+
+// Power
+// The goal is to create a function 'numberToPower(number, power)' that "raises" the number up to power(ie multiplies number by itself power times).
+// Note: Math.pow and some other Math functions like eval() and ** are disabled.
+
+// My variant:
+
+function numberToPower(number, power) {
+  console.info(Math.log2(1024));
+  let result = 1;
+  for (i = 0; i < power; i++) {
+    result *= number;
+  }
+  return result;
+}
+
+// ohters:
+
+function numberToPower(number, power) {
+  if (power === 0) return 1;
+  return number * numberToPower(number, power - 1)
+}
+
+const numberToPower = (number, power) => power > 0 ? number * numberToPower(number, power - 1) : 1;
+
+// Counting sheep...
+// Consider an array / list of sheep where some sheep may be missing from their place.We need a function that counts the number of sheep present in the array(true means present).
+
+
+// My variant:
+
+function countSheeps(arrayOfSheep) {
+  let arrayOfSheepCount = 0;
+  let arrayOfSheepPos = 0;
+  const fullarrayOfSheep = arrayOfSheep;
+  const searchTerm = true;
+
+  while (fullarrayOfSheep.indexOf(searchTerm, arrayOfSheepPos) >= 0) {
+    arrayOfSheepCount++;
+    arrayOfSheepPos = fullarrayOfSheep.indexOf(searchTerm, arrayOfSheepPos) + 1;
+  }
+  return arrayOfSheepCount
+}
+
+// ohters:
+
+function countSheeps(arrayOfSheeps) {
+  return arrayOfSheeps.filter(Boolean).length;
+}
+
+let countSheeps = x => x.filter(s => s).length;
+
+function countSheeps(arrayOfSheep) {
+  return arrayOfSheep.reduce(function (result, current) {
+    if (current) result++;
+    return result;
+  }, 0);
+}
