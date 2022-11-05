@@ -1059,3 +1059,120 @@ function countSheeps(arrayOfSheep) {
     return result;
   }, 0);
 }
+
+
+// Remove exclamation marks
+// Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+// My variant:
+
+function removeExclamationMarks(s) {
+  let x = s.split('!');
+  let z = x.join('');
+  return z
+}
+
+// ohters:
+
+function removeExclamationMarks(s) {
+  return s.replace(/!/gi, '');
+}
+
+function removeExclamationMarks(s) {
+  return s.replace(/!/g, '');
+}
+
+function removeExclamationMarks(s) {
+  return s.split('!').join('');
+}
+
+const removeExclamationMarks = s => s.replace(/!/g, "");
+
+let removeExclamationMarks = (s) => s.replace(/!/g, '');
+
+// Area of a Square
+// Complete the function that calculates the area of the red square, when the length of the circular arc A is given as the input.Return the result rounded to two decimals.
+// Note: use the π value provided in your language(Math:: PI, M_PI, math.pi, etc)
+
+// My variant:
+
+function squareArea(A) {
+
+  let p = 3.1416;
+  let w = (2 * A) / p;
+  let Area = Math.pow(w, 2);
+  let ats = +Area.toFixed(2);
+
+  return ats
+}
+
+// ohters:
+
+function squareArea(A) {
+  var circum = 4 * A;
+  var radius = circum / (2 * Math.PI);
+  var area = Math.pow(radius, 2);
+  return Math.round(area * 100) / 100
+}
+
+squareArea = A => +Math.pow((2 * A / 3.1416), 2).toFixed(2);
+
+function squareArea(A) {
+  return Math.round(Math.pow(A * 2 / Math.PI, 2) * 100) / 100
+}
+
+function squareArea(A) {
+  // Calculate the circumference of A 
+  const circumference = A * 4;
+
+  // Calculate the radius of A
+  const radius = circumference / (Math.PI * 2);
+
+  // Calculate the area of the square, rounded to 2 decimal places
+  const area = Number((radius ** 2).toFixed(2));
+
+  // Return the result
+  return area;
+}
+
+
+// Type of sum
+// Return the type of the sum of the two arguments
+
+// My variant:
+
+function typeOfSum(a, b) {
+  const ats = a + b;
+  if (typeof ats === 'number') {
+    return 'number'
+  } else {
+    return 'string'
+  }
+}
+
+// ohters:
+
+const typeOfSum = (a, b) => typeof (a + b);
+
+function typeOfSum(a, b) {
+  return typeof (a + b);
+}
+
+function typeOfSum(a, b) {
+  let res = a + b;
+  return typeof res;
+}
+
+function typeOfSum(a, b) {
+  if (typeof a === 'string' || a instanceof String) { return 'string' }
+  if (typeof b === 'string' || b instanceof String) { return 'string' }
+  return 'number'
+}
+
+
+
+
+
+
+
+
