@@ -1170,6 +1170,33 @@ function typeOfSum(a, b) {
 }
 
 
+// Find Nearest square number
+// Your task is to find the nearest square number, nearest_sq(n), of a positive integer n.
+
+// My variant:
+
+function nearestSq(n) {
+  let a = Math.sqrt(n);
+  let b = Math.round(a);
+  let ats = Math.pow(b, 2);
+
+  return ats
+}
+
+// ohters:
+
+const nearestSq = n => Math.pow(Math.round(Math.sqrt(n)), 2);
+
+function nearestSq(n) {
+  return Math.round(n ** 0.5) ** 2
+}
+
+const nearestSq = n => (Math.round(Math.sqrt(n))) ** 2
+
+function nearestSq(n) {
+  let a = Math.round(Math.sqrt(n));
+  return a * a;
+}
 
 
 
