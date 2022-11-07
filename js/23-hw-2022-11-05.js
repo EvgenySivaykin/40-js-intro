@@ -490,3 +490,116 @@ function monkeyCount(n) {
     return b
 }
 
+// Get the mean of an array
+// It's the academic year's end, fateful moment of your school report.The averages must be calculated.All the students come to you and entreat you to calculate their average for them.Easy! You just need to write a script.
+// Return the average of the given array rounded down to its nearest integer.
+// The array will never be empty.
+
+
+// My variant:
+
+function getAverage(marks) {
+    let total = 0;
+    for (let i = 0; i < marks.length; i = i + 1) {
+        total = total + marks[i]
+    }
+    const count = marks.length;
+    const average = total / count;
+    const ats = Math.floor(average);
+
+    return ats
+}
+
+// ohters:
+
+function getAverage(marks) {
+    return Math.floor(marks.reduce((sum, x) => sum + x) / marks.length);
+}
+
+const getAverage = marks => Math.floor(marks.reduce((a, b) => a + b) / marks.length);
+
+function getAverage(marks) {
+    return Math.floor(marks.reduce((a, b) => a + b, 0) / marks.length);
+}
+
+// reduce is good 
+var getAverage = (m) => parseInt(m.reduce((a, b) => a + b) / m.length)
+
+function getAverage(marks) {
+    var sum = 0;
+
+    for (var i in marks)
+        sum += marks[i];
+
+    return parseInt(sum / marks.length);
+}
+
+// Shifty Closures
+// Functional closures can get overly attached.Set them straight!
+// Why doesn't greet_abe() actually greet Abe?
+
+// My variant:
+
+var greet_abe = function () {
+    let name1 = 'Abe';
+    return `Hello, ${name1}!`;
+};
+
+var greet_ben = function () {
+    let name2 = 'Ben';
+    return `Hello, ${name2}!`;
+};
+
+
+// ohters:
+
+var greet_abe = greet('Abe');
+var greet_ben = greet('Ben');
+
+function greet(name) {
+    return function () {
+        return "Hello, " + name + '!';
+    };
+}
+
+const greet_abe = () => 'Hello, Abe!';
+const greet_ben = () => 'Hello, Ben!';
+
+
+// Be Concise III - Sum Squares
+// You are given a program sumSquares that takes an array as input and returns the sum of the squares of each item in an array.For example:
+// Shorten the code such that it meets the requirements.
+// A few hints:
+// Try researching about built -in Array methods; they may help shorten your code a lot
+
+// My variant:
+
+function sumSquares(array) {
+    const result = array.map(n => n ** 2);
+
+    const sumReduce = result.reduce(function (total, n) {
+        return total + n;
+    });
+    return sumReduce;
+}
+
+// ohters:
+
+let sumSquares = a => a.reduce((s, x) => s + x * x, 0)
+
+function sumSquares(array) {
+    return array.reduce((a, b) => a + b ** 2, 0);
+}
+
+// An alternative solution using both map and reduce
+var sumSquares = a => a.map(x => x * x).reduce((x, y) => x + y);
+
+sumSquares = a => a.reduce((p, c) => p + c * c, 0)
+
+
+
+
+
+
+
+
