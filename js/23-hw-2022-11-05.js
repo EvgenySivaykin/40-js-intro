@@ -644,5 +644,517 @@ function colorOf(r, g, b) {
     return '#' + R + G + B
 }
 
+// Highest and Lowest
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+
+
+// My variant:
+
+
+function highAndLow(numbers) {
+    let w = numbers.split(' ');
+
+    w.sort(function (a, b) {
+        return a - b;
+    });
+    const r = w[0];
+    const y = w[w.length - 1];
+
+    return `${y} ${r}`
+}
+
+// ohters:
+
+function highAndLow(numbers) {
+    numbers = numbers.split(' ').map(Number);
+    return Math.max.apply(0, numbers) + ' ' + Math.min.apply(0, numbers);
+}
+
+function highAndLow(numbers) {
+    numbers = numbers.split(' ');
+    return `${Math.max(...numbers)} ${Math.min(...numbers)}`;
+}
+
+function highAndLow(numbers) {
+    var arr = numbers.split(" ");
+    return Math.max.apply(null, arr) + ' ' + Math.min.apply(null, arr);
+}
+
+// Array plus array
+// I'm new to coding and now I want to get the sum of two arrays... Actually the sum of all their elements. I'll appreciate for your help.
+// P.S.Each array includes only integer numbers.Output is a number too.
+
+// My variant:
+
+function arrayPlusArray(arr1, arr2) {
+    let q = arr1.concat(arr2);
+
+    const sumReduce = q.reduce(function (total, n) {
+        return total + n;
+    });
+
+    return sumReduce
+}
+
+// ohters:
+
+function arrayPlusArray(arr1, arr2) {
+    return arr1.concat(arr2).reduce((acc, cur) => acc + cur);
+}
+
+function arrayPlusArray(arr1, arr2) {
+    let arr = [...arr1, ...arr2];
+    return arr.reduce((a, b) => a + b);
+}
+
+// accepts indefinite number of arrays
+function arrayPlusArray(...arrays) {
+    return [].concat(...arrays).reduce((a, b) => a + b, 0)
+}
+const arrayPlusArray = (arr1, arr2) => [...arr1, ...arr2].reduce((a, b) => a + b, 0);
+
+function arrayPlusArray(arr1, arr2) {
+    return arr1.concat(arr2).reduce((a, b) => a + b)
+}
+
+// shorter concat[reverse longer]
+// Given 2 strings, a and b, return a string of the form: shorter + reverse(longer) + shorter.
+// In other words, the shortest string has to be put as prefix and as suffix of the reverse of the longest.
+// Strings a and b may be empty, but not null(In C# strings may also be null.Treat them as if they are empty.).
+// If a and b have the same length treat a as the longer producing b + reverse(a) + b
+
+
+// My variant:
+
+function shorter_reverse_longer(a, b) {
+    let r = a.split('');
+    let t = b.split('');
+
+    if (r.length >= t.length) {
+        let f = r;
+        let g = f.reverse();
+        let d = g.join('');
+        return `${b}${d}${b}`
+    } else {
+        let o = t;
+        let x = o.reverse();
+        let h = x.join('');
+        return `${a}${h}${a}`
+    }
+}
+
+
+// ohters:
+
+function shorter_reverse_longer(a, b) {
+    return a.length >= b.length ? b + a.split('').reverse().join('') + b :
+        a + b.split('').reverse().join('') + a;
+}
+
+function shorter_reverse_longer(a, b) {
+    return b.length > a.length ? a + b.split('').reverse().join(``) + a : b + a.split('').reverse().join(``) + b;
+}
+
+function shorter_reverse_longer(a, b) {
+    if (a.length >= b.length) [a, b] = [b, a];
+    return a + b.split('').reverse().join('') + a;
+}
+
+const shorter_reverse_longer = (a, b) =>
+    b.length > a.length ? a + [...b].reverse().join(``) + a : b + [...a].reverse().join(``) + b;
+
+function shorter_reverse_longer(a, b) {
+    return b.length > a.length ? a + [...b].reverse().join('') + a : b + [...a].reverse().join('') + b
+}
+
+
+// Safen User Input Part I - htmlspecialchars
+// Safen User Input Part I - htmlspecialchars
+// You are a(n) novice / average / experienced / professional / world - famous Web Developer(choose one) who owns a(n) simple / clean / slick / beautiful / complicated / professional / business website(choose one or more) which contains form fields so visitors can send emails or leave a comment on your website with ease.However, with ease comes danger.Every now and then, a hacker visits your website and attempts to compromise it through the use of XSS(Cross Site Scripting).This is done by injecting script tags into the website through form fields which may contain malicious code(e.g.a redirection to a malicious website that steals personal information).
+//     Mission
+// Your mission is to implement a function that converts the following potentially harmful characters:
+// < --> & lt;
+// > --> & gt;
+// " --> &quot;
+// & --> & amp;
+// Good luck: D
+
+// My variant:
+
+function htmlspecialchars(formData) {
+
+    const regex = new RegExp('&', 'g');
+    const t = formData.replace(regex, '&amp;');
+
+    const regex1 = new RegExp('<', 'g');
+    const q = t.replace(regex1, '&lt;');
+
+    const regex2 = new RegExp('>', 'g');
+    const w = q.replace(regex2, '&gt;');
+
+    const regex3 = new RegExp('"', 'g');
+    const r = w.replace(regex3, '&quot;');
+
+    return r
+
+}
+
+// ohters:
+
+function htmlspecialchars(formData) {
+    return formData.replace(/&/g, "&amp;")
+        .replace(/"/g, "&quot;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;");
+}
+
+function htmlspecialchars(formData) {
+    return formData.replace(/[<>"&]/g, ch => ({ "<": "&lt;", ">": "&gt;", "\"": "&quot;", "&": "&amp;" }[ch]));
+}
+
+function htmlspecialchars(formData) {
+    const dict = {
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        '&': '&amp;',
+    };
+    return formData.replace(/[<>"&]/g, char => dict[char]);
+}
+
+const htmlspecialchars = formData => formData.replace(/[<>"&]/g, m => ({ "<": "&lt;", ">": "&gt;", "\"": "&quot;", "&": "&amp;" })[m])
+
+
+Largest Elements
+Write a program that outputs the top n elements from a list.
+
+// My variant:
+
+function largest(n, xs) {
+    xs.sort(function (a, b) {
+        return a - b;
+    });
+    if (n === 0) {
+        return []
+    } else {
+        return xs.slice(-n)
+    }
+}
+
+// ohters:
+
+function largest(n, xs) {
+    return xs.sort(function (a, b) { return a - b; }).slice(xs.length - n);
+}
+
+const largest = function (n, xs) {
+    return n === 0 ? [] : xs.sort((a, b) => a - b).slice(-n)
+}
+
+const largest = (n, xs) => n ? xs.sort((a, b) => a - b).slice(-n) : [];
+
+// Changing letters
+// When provided with a String, capitalize all vowels
+// For example:
+// Input: "Hello World!"
+// Output: "HEllO WOrld!"
+// Note: Y is not a vowel in this kata.
+
+
+// My variant:
+
+function swap(string) {
+    return string.replace(/a/g, "A")
+        .replace(/e/g, "E")
+        .replace(/i/g, "I")
+        .replace(/o/g, "O")
+        .replace(/u/g, "U");
+}
+
+// ohters:
+
+function swap(st) {
+    return st.replace(/[aeiou]/g, v => v.toUpperCase())
+}//z.
+
+const vowels = ["a", "e", "i", "o", "u"];
+const swap = s => s.split('').map(x => vowels.includes(x) ? x.toUpperCase() : x).join('');
+
+swap = s => s.replace(/[aeiou]/gi, e => e.toUpperCase())
+
+const swap = $ => $.replace(/[aeiou]/g, el => el.toUpperCase())
+
+// V A P O R C O D E
+// ASC Week 1 Challenge 4(Medium #1)
+// Write a function that converts any sentence into a V A P O R W A V E sentence.a V A P O R W A V E sentence converts all the letters into uppercase, and adds 2 spaces between each letter(or special character) to create this V A P O R W A V E effect.
+// Note that spaces should be ignored in this cas
+
+
+// My variant:
+
+function vaporcode(string) {
+    let x = string.split(' ');
+    let y = x.join('');
+    let w = y.split('');
+    let ats = w.join('  ');
+    return (ats.toUpperCase())
+}
+
+
+// ohters:
+
+function vaporcode(string) {
+    return string.toUpperCase().split(" ").join("").split("").join("  ");
+}
+
+const vaporcode = string =>
+    string.toUpperCase().match(/\S/g).join(`  `);
+
+function vaporcode(string) {
+    let arr = string.toUpperCase().split('')
+    let noSpace = arr.filter(item => item !== ' ')
+    let result = noSpace.join('  ')
+    return result;
+}
+
+function vaporcode(s) {
+    return s.toUpperCase().match(/[^ ]/g).join`  `
+}
+
+const vaporcode = s => s.toUpperCase().replace(/(.)(\s+)?/g, '$1  ').trim()
+
+
+// Nth Smallest Element(Array Series #4)
+// Task
+// Given an array / list of integers, find the Nth smallest element in the array.
+
+// My variant:
+
+function nthSmallest(arr, pos) {
+    arr.sort(function (a, b) {
+        return a - b;
+    });
+    return arr[pos - 1]
+}
+
+// ohters:
+
+function nthSmallest(arr, pos) {
+    return arr.sort((a, b) => a - b)[pos - 1]
+}
+
+const nthSmallest = (arr, pos) => arr.sort((a, b) => a - b)[pos - 1];
+
+//task for 30 sec
+const nthSmallest = (arr, pos, out = arr.sort((a, b) => a - b)) => out[pos - 1]
+
+const nthSmallest = (a, n) => a.sort((x, y) => x - y)[n - 1];
+
+// Filter Coffee
+// You love coffee and want to know what beans you can afford to buy it.
+// The first argument to your search function will be a number which represents your budget.
+// The second argument will be an array of coffee bean prices.
+// Your 'search' function should return the stores that sell coffee within your budget.
+// The search function should return a string of prices for the coffees beans you can afford.The prices in this string are to be sorted in ascending order.
+
+// My variant:
+
+function search(budget, prices) {
+    let result = prices.filter(function (elem) {
+        if (elem <= budget) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+    result.sort(function (a, b) {
+        return a - b;
+    });
+
+    let r = result.join(',');
+    return r
+}
+
+// ohters:
+
+let search = (budget, prices) => prices
+    .filter(p => p <= budget)
+    .sort((a, b) => a - b)
+    .join(',')
+
+const search = (budget, prices) => prices.filter(v => v <= budget).sort((a, b) => a - b).toString();
+
+const search = (budget, prices) =>
+    `${prices.filter(val => val <= budget).sort((a, b) => a - b)}`;
+
+const search = (budget, prices) =>
+    prices.filter(element => element <= budget)
+        .sort((a, b) => a - b)
+        .join()
+
+function search(b, p) {
+    r = []; for (i = 0; i < p.length; i++) if (p[i] <= b) r.push(p[i]); r.sort((a, b) => a - b); return r.join(',')
+}
+
+// Sum of two lowest positive integers
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers.No floats or non - positive integers will be passed.
+
+// My variant:
+
+function sumTwoSmallestNumbers(numbers) {
+    numbers.sort(function (a, b) {
+        return a - b;
+    });
+    let a = numbers[0];
+    let b = numbers[1];
+    let ats = a + b;
+
+    return ats
+}
+
+// ohters:
+
+function sumTwoSmallestNumbers(numbers) {
+    numbers = numbers.sort(function (a, b) { return a - b; });
+    return numbers[0] + numbers[1];
+};
+
+function sumTwoSmallestNumbers(numbers) {
+    var [a, b] = numbers.sort((a, b) => a - b)
+    return a + b
+}
+
+// Holiday VI - Shark Pontoon
+// Your friend invites you out to a cool floating pontoon around 1km off the beach.Among other things, the pontoon has a huge slide that drops you out right into the ocean, a small way from a set of stairs used to climb out.
+// As you plunge out of the slide into the water, you see a shark hovering in the darkness under the pontoon...Crap!
+// You need to work out if the shark will get to you before you can get to the pontoon.To make it easier... as you do the mental calculations in the water you either freeze when you realise you are dead, or swim when you realise you can make it!
+// You are given 5 variables;
+// sharkDistance = distance from the shark to the pontoon.The shark will eat you if it reaches you before you escape to the pontoon.
+// sharkSpeed = how fast it can move in metres / second.
+// pontoonDistance = how far you need to swim to safety in metres.
+// youSpeed = how fast you can swim in metres / second.
+// dolphin = a boolean, if true, you can half the swimming speed of the shark as the dolphin will attack it.
+// The pontoon, you, and the shark are all aligned in one dimension.
+// If you make it, return "Alive!", if not, return "Shark Bait!".
+
+// My variant:
+
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
+    if (pontoonDistance >= sharkDistance) {
+        return "Shark Bait!"
+    } else if (sharkSpeed === 0) {
+        return "Alive!"
+    } else if (dolphin === true) {
+        let myTime = pontoonDistance / youSpeed;
+        let sharkTime = 2 * sharkDistance / sharkSpeed;
+        if (sharkTime > myTime) {
+            return "Alive!"
+        } else {
+            return "Shark Bait!"
+        }
+    } else {
+        const myTime = pontoonDistance / youSpeed;
+        const sharkTime2 = sharkDistance / sharkSpeed;
+        if (sharkTime2 > myTime) {
+            return "Alive!"
+        } else {
+            return "Shark Bait!"
+        }
+    }
+}
+
+// ohters:
+
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
+    if (dolphin) {
+        sharkSpeed /= 2;
+    }
+    return pontoonDistance / youSpeed < sharkDistance / sharkSpeed ? "Alive!" : "Shark Bait!";
+}
+
+const shark = (pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) => {
+    let youTime = pontoonDistance / youSpeed
+    let sharkTime = sharkDistance / (dolphin ? sharkSpeed / 2 : sharkSpeed)
+
+    return sharkTime < youTime ? 'Shark Bait!' : 'Alive!'
+}
+
+shark = (pD, sD, yS, sS, d) => yS / pD > sS / sD / (d ? 2 : 1) ? "Alive!" : "Shark Bait!";
+
+function shark(pontoonDistance, sharkDistance, youSpeed, sharkSpeed, dolphin) {
+    let shTime = sharkDistance / sharkSpeed;
+    let youTime = pontoonDistance / youSpeed;
+    if (dolphin == true) {
+        shTime = shTime * 2;
+    }
+    if (youTime < shTime) {
+        return "Alive!";
+    }
+    else {
+        return "Shark Bait!";
+    }
+
+}
+
+// DNA to RNA Conversion
+// Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems.It is composed of four nucleic acid bases Guanine('G'), Cytosine('C'), Adenine('A'), and Thymine('T').
+// Ribonucleic acid, RNA, is the primary messenger molecule in cells.RNA differs slightly from DNA its chemical structure and contains no Thymine.In RNA Thymine is replaced by another nucleic acid Uracil('U').
+// Create a function which translates a given DNA string into RNA.
+// For example:
+// "GCAT"  => "GCAU"
+// The input string can be of arbitrary length - in particular, it may be empty.All input is guaranteed to be valid, i.e.each input string will only ever consist of 'G', 'C', 'A' and / or 'T'.
+
+// My variant:
+
+function DNAtoRNA(dna) {
+    return dna.replace(/T/g, "U")
+}
+
+// ohters:
+
+const DNAtoRNA = dna => dna.replace(/T/g, 'U');
+
+function DNAtoRNA(dna) {
+    return dna.split("T").join("U");
+}
+
+function DNAtoRNA(dna) {
+    var hold = ''
+    for (var i = 0; i < dna.length; i++) {
+        if (dna[i] == "T") {
+            hold += "U"
+        }
+        else { hold += dna[i] }
+    }
+    return hold;
+
+}
+
+// BASIC: Making Six Toast.
+// You are going to make toast fast, you think that you should make multiple pieces of toasts and once.So, you try to make 6 pieces of toast.
+//     Problem:
+// You forgot to count the number of toast you put into there, you don't know if you put exactly six pieces of toast into the toasters.
+// Define a function that counts how many more(or less) pieces of toast you need in the toasters.Even though you need more or less, the number will still be positive, not negative.
+
+// My variant:
+
+function sixToast(num) {
+    return Math.abs(num - 6)
+}
+
+// ohters:
+
+function sixToast(num) {
+    if (num < 6) {
+        return 6 - num
+    } else
+        return num - 6;
+}
+
+function sixToast(num) {
+
+    return num >= 6 ? num - 6 : num;
+}
+
 
 
