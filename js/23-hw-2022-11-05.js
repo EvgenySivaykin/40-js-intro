@@ -1156,5 +1156,73 @@ function sixToast(num) {
     return num >= 6 ? num - 6 : num;
 }
 
+// String Templates - Bug Fixing #5
+// Oh no! Timmy hasn't followed instructions very carefully and forgot how to use the new String Template feature, Help Timmy with his string template so it works as he expects!
+
+
+// My variant:
+function buildString(...template) {
+    return `I like ${template.join(', ')}!`;
+}
+
+
+// ohters:
+
+
+// Do I get a bonus ?
+// It's bonus time in the big city! The fatcats are rubbing their paws in anticipation... but who is going to make the most money?
+// Build a function that takes in two arguments(salary, bonus).Salary will be an integer, and bonus a boolean.
+// If bonus is true, the salary should be multiplied by 10. If bonus is false, the fatcat did not make enough money and must receive only his stated salary.
+// Return the total figure the individual will receive as a string prefixed with "£"(= "\u00A3", JS, Go, Java, Scala, and Julia), "$"(C#, C++, Ruby, Clojure, Elixir, PHP, Python, Haskell, and Lua) or "¥"(Rust).
+
+
+// My variant:
+
+function bonusTime(salary, bonus) {
+    if (bonus === true) {
+        const ats = salary * 10;
+        return `£${ats}`;
+    } else {
+        return `£${salary}`
+    }
+}
+
+
+// ohters:
+
+function bonusTime(salary, bonus) {
+    return bonus ? `£${10 * salary}` : `£${salary}`;
+}
+
+const bonusTime = (salary, bonus) => `£${salary * (bonus ? 10 : 1)}`;
+
+function bonusTime(salary, bonus) {
+    return '£' + salary * (bonus ? 10 : 1);
+}
+
+Short Long Short
+Given 2 strings, a and b, return a string of the form short + long + short, with the shorter string on the outside and the longer string on the inside.The strings will not be the same length, but they may be empty(zero length).
+
+
+// My variant:
+
+function solution(a, b) {
+    const q = a.length;
+    const w = b.length;
+    if (q > w) {
+        return `${b}${a}${b}`
+    } else {
+        return `${a}${b}${a}`
+    }
+}
+
+// ohters:
+
+function solution(a, b) {
+    return a.length < b.length ? a + b + a : b + a + b
+}
+
+const solution = (a, b) => a < b ? a + b + a : b + a + b;
+
 
 

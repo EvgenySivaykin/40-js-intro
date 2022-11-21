@@ -118,3 +118,25 @@ console.log(sumString);
 
 const sumString2 = `${n1} + ${n2} = ${n1 + n2}`;
 console.log(sumString2);
+
+console.clear()
+
+const input = '357243272336590939421231821230112288704024257828904225034973303630876342724131901751796667421587142820070187627494650123566704887410454308736064932563210846759';
+
+// console.log(input);
+// let y = input.split('');
+// console.log(y);
+
+var myRe = /1*/g;
+var str = '357243272336590939421231821230112288704024257828904225034973303630876342724131901751796667421587142820070187627494650123566704887410454308736064932563210846759';
+// var myArray;
+// while ((myArray = myRe.exec(str)) !== null) {
+//     var msg = 'Найдено ' + myArray[0] + '. ';
+//     msg += 'Следующее сопоставление начнётся с позиции ' + myRe.lastIndex;
+//     console.log(msg);
+// }
+let r = input.includes('35');
+console.log(r);
+
+let t = Math.count(r)
+console.log(t);
